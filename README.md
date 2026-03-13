@@ -230,5 +230,3 @@ def safe_chat_completion(prompt):
 MIT License
 
 ---
-
-**MAPS** - Protecting AI systems from prompt injection attacks 🛡️
