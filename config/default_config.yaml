@@ -1,0 +1,78 @@
+# MAPS Default Configuration
+# ==========================
+
+# Scanner Configuration
+scanner:
+  enable_all_layers: true
+  
+  # Layer enablement
+  layers:
+    keyword_detection: true
+    regex_detection: true
+    ngram_detection: true
+    semantic_similarity: true
+    ml_classifier: true
+    rule_engine: true
+
+# Risk Scoring Configuration
+risk_scoring:
+  thresholds:
+    safe_max: 30
+    suspicious_max: 60
+  
+  # Layer weights (must sum to 100)
+  weights:
+    keyword_detection: 15
+    regex_detection: 15
+    ngram_detection: 15
+    semantic_similarity: 25
+    ml_classifier: 20
+    rule_engine: 10
+
+# Keyword Detector Configuration
+keyword_detector:
+  similarity_threshold: 80
+  min_keyword_length: 4
+
+# Regex Detector Configuration
+regex_detector:
+  patterns_file: null  # Use default patterns if null
+
+# N-Gram Detector Configuration
+ngram_detector:
+  n: 5
+  overlap_threshold: 0.6
+  fuzzy_threshold: 75
+
+# Semantic Detector Configuration
+semantic_detector:
+  model_name: "all-MiniLM-L6-v2"
+  similarity_threshold: 0.65
+  device: "cpu"
+
+# ML Classifier Configuration
+ml_classifier:
+  model_type: "logistic_regression"  # or "random_forest"
+  max_features: 10000
+  ngram_range: [1, 3]
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+
+# Dashboard Configuration
+dashboard:
+  port: 8501
+
+# Logging Configuration
+logging:
+  db_path: "backend/logging/maps_logs.db"
+  log_level: "INFO"
+
+# Model Paths
+models:
+  ml_model: "models/ml_model.pkl"
+  ml_vectorizer: "models/ml_vectorizer.pkl"
+  semantic_embeddings: "models/semantic_embeddings.npy"

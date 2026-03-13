@@ -1,0 +1,17 @@
+{
+  "total_samples": 97754,
+  "benign_samples": 53463,
+  "malicious_samples": 44291,
+  "train_samples": 68427,
+  "validation_samples": 14663,
+  "test_samples": 14664,
+  "attack_types": {
+    "benign": 53463,
+    "direct_injection": 16893,
+    "ignore": 8400,
+    "escape": 8400,
+    "combine": 8400,
+    "jailbreak": 1144,
+    "indirect_injection": 1054
+  }
+}
